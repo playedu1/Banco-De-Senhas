@@ -1,5 +1,6 @@
 #! python3 
 
+import pyperclip
 import json
 import seguranca # nós criamos essa biblioteca
 import lendo #essa aqui também!
@@ -13,8 +14,8 @@ from tkinter import simpledialog #uma coisa específica de tkinter
 
 #Pegando o dicionário do arquivo 'senhasDB'
 try:
-    SenhasDict = lendo.ler()    
-except FileNotFoundError:
+    SenhasDict = lendo.ler()   
+except:
     print("Senhas não encontradas! Criando novo banco de senhas")
     SenhasDict = {}
 
@@ -30,7 +31,7 @@ def copia():                                            #função que copia a se
     busca = caixaLista.get(caixaLista.curselection())   #aqui pegamos o que está selecionado na nossa ListBox
     senhaMaster = visorSM.get()                         #aqui pegamos o que foi escrito no nosso visor
     if busca in SenhasDict:                             #aqui testamos se há algum elemento no SenhasDict que corresponde à nossa busca
-        print(seguranca.decode(senhaMaster, SenhasDict[busca])) #printamos se houver correspondência
+        pyperclip.copy(seguranca.decode(senhaMaster, SenhasDict[busca])) #printamos se houver correspondência
         messagebox.showinfo("Information", "Senha para " + busca + " copiada.") #informamos com uma janela que a senha foi copiada.
 
 def cadastra(): #função que cadastra a senha no dicionário
