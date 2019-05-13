@@ -69,6 +69,7 @@ btnCadastro.pack()
 btnCopiar.pack()
 caixaLista.pack()
 
+janela.mainloop()
 
         
 
