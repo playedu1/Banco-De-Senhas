@@ -1,3 +1,5 @@
 SenhasBD.txt
 .vscode
 __pycache__
+.theia
+envSenhas
