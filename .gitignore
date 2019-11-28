@@ -1,5 +1,8 @@
 SenhasBD.txt
 .vscode
 __pycache__
+__pycache__/
+/__pycache__
+/__pycache__/
 .theia
 envSenhas
